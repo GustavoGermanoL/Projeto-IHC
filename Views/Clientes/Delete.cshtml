@@ -1,0 +1,75 @@
+﻿@model ProjetoIHC.Models.Cliente
+
+@{
+    ViewData["Title"] = "Excluir Cliente";
+}
+
+<h1 class="text-center mb-4">Excluir Cliente</h1>
+
+<div class="card shadow-sm">
+    <div class="card-header bg-danger text-white">
+        <h4 class="mb-0">Confirmação de Exclusão</h4>
+    </div>
+    <div class="card-body">
+        <h5>Tem certeza de que deseja excluir este cliente?</h5>
+        <hr />
+        <dl class="row">
+            <!-- Nome Completo -->
+            <dt class="col-sm-3 fw-bold">Nome Completo</dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.NomeCompleto)
+            </dd>
+
+            <!-- Data de Nascimento -->
+            <dt class="col-sm-3 fw-bold">Data de Nascimento</dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.DataNascimento)
+            </dd>
+
+            <!-- RG -->
+            <dt class="col-sm-3 fw-bold">RG</dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.RG)
+            </dd>
+
+            <!-- CPF -->
+            <dt class="col-sm-3 fw-bold">CPF</dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.CPF)
+            </dd>
+
+            <!-- Logradouro -->
+            <dt class="col-sm-3 fw-bold">Logradouro</dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Logradouro)
+            </dd>
+
+            <!-- Bairro -->
+            <dt class="col-sm-3 fw-bold">Bairro</dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Bairro)
+            </dd>
+
+            <!-- Cidade -->
+            <dt class="col-sm-3 fw-bold">Cidade</dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Cidade)
+            </dd>
+
+            <!-- Estado Civil -->
+            <dt class="col-sm-3 fw-bold">Estado Civil</dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.EstadoCivil)
+            </dd>
+        </dl>
+
+        <!-- Formulário de Exclusão -->
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <div class="d-flex justify-content-between align-items-center">
+                <button type="submit" class="btn btn-danger">Excluir</button>
+                <a asp-action="Index" class="btn btn-secondary">Voltar para a Lista</a>
+            </div>
+        </form>
+    </div>
+</div>

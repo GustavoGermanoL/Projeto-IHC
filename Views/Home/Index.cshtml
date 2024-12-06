@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bem-vindo(a) ao Sistema!</h1>
+    <p class="lead">Você está na página inicial do sistema. Acesse os links abaixo para gerenciar os clientes.</p>
+
+    <div class="mt-4">
+        
+        <a asp-area="" asp-controller="Clientes" asp-action="Index" class="btn btn-primary btn-lg">Ver Clientes</a>
+        <a asp-area="" asp-controller="Clientes" asp-action="Create" class="btn btn-success btn-lg ml-2">Criar Novo Cliente</a>
+
+    </div>
+</div>

@@ -1,0 +1,93 @@
+﻿@model ProjetoIHC.Models.Cliente
+
+@{
+    ViewData["Title"] = "Detalhes do Cliente";
+}
+
+<h1 class="text-center mb-4">Detalhes do Cliente</h1>
+
+<div class="card shadow-sm">
+    <div class="card-header bg-primary text-white">
+        <h4 class="mb-0">Informações do Cliente</h4>
+    </div>
+    <div class="card-body">
+        <dl class="row">
+            <!-- Nome Completo -->
+            <dt class="col-sm-3 fw-bold">Nome Completo</dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.NomeCompleto)
+            </dd>
+
+            <!-- Data de Nascimento -->
+            <dt class="col-sm-3 fw-bold">Data de Nascimento</dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.DataNascimento)
+            </dd>
+
+            <!-- RG -->
+            <dt class="col-sm-3 fw-bold">RG</dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.RG)
+            </dd>
+
+            <!-- CPF -->
+            <dt class="col-sm-3 fw-bold">CPF</dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.CPF)
+            </dd>
+
+            <!-- CEP -->
+            <dt class="col-sm-3 fw-bold">CEP</dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.CEP)
+            </dd>
+
+            <!-- Logradouro -->
+            <dt class="col-sm-3 fw-bold">Logradouro</dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Logradouro)
+            </dd>
+
+            <!-- Bairro -->
+            <dt class="col-sm-3 fw-bold">Bairro</dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Bairro)
+            </dd>
+
+            <!-- Cidade -->
+            <dt class="col-sm-3 fw-bold">Cidade</dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.Cidade)
+            </dd>
+
+            <!-- UF -->
+            <dt class="col-sm-3 fw-bold">UF</dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.UF)
+            </dd>
+
+            <!-- Estado Civil -->
+            <dt class="col-sm-3 fw-bold">Estado Civil</dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.EstadoCivil)
+            </dd>
+
+            <!-- Nome do Pai -->
+            <dt class="col-sm-3 fw-bold">Nome do Pai</dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.NomePai)
+            </dd>
+
+            <!-- Nome da Mãe -->
+            <dt class="col-sm-3 fw-bold">Nome da Mãe</dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.NomeMae)
+            </dd>
+        </dl>
+    </div>
+</div>
+
+<div class="d-flex justify-content-between align-items-center mt-3">
+    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-warning">Editar</a>
+    <a asp-action="Index" class="btn btn-secondary">Voltar para a Lista</a>
+</div>
