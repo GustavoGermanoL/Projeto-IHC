@@ -56,6 +56,17 @@ namespace ProjetoIHC.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create(Cliente cliente)
         {
+            if (cliente.RG.Length != 9)
+            {
+                ModelState.AddModelError("RG", "RG deve ter 9 dígitos.");
+            }
+
+            // Validação do CPF (11 dígitos)
+            if (cliente.CPF.Length != 11)
+            {
+                ModelState.AddModelError("CPF", "CPF deve ter 11 dígitos.");
+            }
+
             if (ModelState.IsValid)
             {
                 _context.Add(cliente);
@@ -91,6 +102,16 @@ namespace ProjetoIHC.Controllers
             if (id != cliente.Id)
             {
                 return NotFound();
+            }
+            if (cliente.RG.Length > 9)
+            {
+                ModelState.AddModelError("RG", "RG não pode ter mais do que 9 dígitos.");
+            }
+
+            // Verifica se o CPF tem mais de 11 dígitos
+            if (cliente.CPF.Length > 11)
+            {
+                ModelState.AddModelError("CPF", "CPF não pode ter mais do que 11 dígitos.");
             }
 
             if (ModelState.IsValid)

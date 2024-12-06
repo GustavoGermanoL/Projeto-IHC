@@ -11,7 +11,7 @@
         <h4 class="mb-0">Preencha os dados do cliente</h4>
     </div>
     <div class="card-body">
-        <form asp-action="Create" class="needs-validation" novalidate>
+        <form asp-action="Create" class="needs-validation" novalidate onsubmit="return validateForm()">
             <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
 
             <div class="row">
@@ -34,14 +34,14 @@
                 <!-- RG -->
                 <div class="col-md-6 mb-3">
                     <label asp-for="RG" class="form-label fw-bold">RG</label>
-                    <input asp-for="RG" class="form-control" placeholder="Digite o RG" required />
+                    <input asp-for="RG" class="form-control" maxlength="9" placeholder="Digite o RG" required />
                     <span asp-validation-for="RG" class="text-danger"></span>
                 </div>
 
                 <!-- CPF -->
                 <div class="col-md-6 mb-3">
                     <label asp-for="CPF" class="form-label fw-bold">CPF</label>
-                    <input asp-for="CPF" class="form-control" placeholder="Digite o CPF" required />
+                    <input asp-for="CPF" class="form-control" maxlength="11" placeholder="Digite o CPF" required />
                     <span asp-validation-for="CPF" class="text-danger"></span>
                 </div>
             </div>
@@ -137,5 +137,27 @@
     @{
         await Html.RenderPartialAsync("_CEPPartial");
     }
+    <script>
+
+    function validateForm() {
+            var rg = document.getElementById("rg").value;
+            var cpf = document.getElementById("cpf").value;
+
+            
+            if (rg.length !== 9) {
+                alert("RG deve ter 9 dígitos.");
+                return false;
+            }
+
+           
+            if (cpf.length !== 11) {
+                alert("CPF deve ter 11 dígitos.");
+                return false;
+            }
+
+            return true; 
+        }
+
+    </script>
    
 }
